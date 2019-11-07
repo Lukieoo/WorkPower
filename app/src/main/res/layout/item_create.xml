@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+
+        android:elevation="2dp">
+        <com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/creator"
+
+            android:layout_width="match_parent" android:layout_height="60dp">
+            <!-- Bottom View Start-->
+            <LinearLayout
+                android:background="#5DBCEA"
+                android:id="@+id/bottom_wrapper"
+                android:layout_width="120dp"
+                android:gravity="center"
+
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <!--What you want to show-->
+                <ImageView
+                    android:id="@+id/done"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_done"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+                <ImageView
+                    android:id="@+id/important"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_record_voice"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+                <ImageView
+                    android:id="@+id/delete"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_delete"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+                <TextView
+                    android:visibility="invisible"
+                    android:textColor="@android:color/white"
+                    android:id="@+id/show"
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+            <!-- Bottom View End-->
+
+            <!-- Surface View Start -->
+            <LinearLayout
+                android:id="@+id/main"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:background="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!--What you want to show in SurfaceView-->
+                <TextView
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:id="@+id/number"
+                    android:text=""
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:gravity="center|start"
+                    android:id="@+id/describe"
+                    android:text=" "
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+            <!-- Surface View End -->
+        </com.daimajia.swipe.SwipeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+
+        android:id="@+id/RelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/rectangle"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:text="Paweł Krzyściak"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="sans-serif-light"
+                android:text="Android Developer"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/photo"
+            app:civ_border_color="#5DBCEA"
+            app:civ_border_width="2dp" />
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:background="#FAFAFA"
+        android:id="@+id/RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:padding="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/fab"
+        app:layout_constraintTop_toBottomOf="@+id/RelativeLayout" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        app:fabSize="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:layout_marginStart="388dp"
+        android:contentDescription="Push"
+        app:rippleColor="@android:color/black"
+        app:borderWidth="5dp"
+        app:elevation="0dp"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="#3AACED"
+        android:backgroundTint="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/NavigationBottom"
+        app:layout_constraintEnd_toEndOf="@+id/NavigationBottom"
+        app:layout_constraintStart_toStartOf="@+id/NavigationBottom"
+        app:layout_constraintTop_toTopOf="@+id/NavigationBottom" />
+
+
+    <RelativeLayout
+        android:elevation="-1dp"
+        android:id="@+id/NavigationBottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/rectangle2"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <ImageButton
+            android:backgroundTint="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="40dp"
+            android:id="@+id/Graph"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_chart"
+            />
+        <ImageButton
+            android:backgroundTint="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="40dp"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/Contacts"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_group"
+            />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
