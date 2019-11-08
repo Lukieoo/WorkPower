@@ -5,6 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <RelativeLayout
+        android:id="@+id/RL"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <RelativeLayout
 
@@ -95,10 +101,10 @@
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent">
         <ImageButton
+            android:id="@+id/Graph"
             android:backgroundTint="@android:color/transparent"
             android:layout_centerVertical="true"
             android:layout_marginStart="40dp"
-            android:id="@+id/Graph"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_chart"

@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -33,17 +35,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList<ModelEvent> events;
     RecyclerAdapter recyclerViewx;
     FloatingActionButton actionButton;
+    RelativeLayout relativeLayout;
+    RelativeLayout relativeLayout2;
+
+    ImageButton graph;
+
+    Boolean isOpen=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+    ///FIND
         recyclerView=findViewById(R.id.RecyclerView);
         actionButton=findViewById(R.id.fab);
-        mDatabaseHelper = new DatabaseHelper(this);
+        relativeLayout=findViewById(R.id.RelativeLayout);
+        relativeLayout2=findViewById(R.id.RL);
+        graph=findViewById(R.id.Graph);
 
+        relativeLayout2.setTranslationY(-getResources().getDimension(R.dimen.stan_300));
+        relativeLayout2.bringToFront();
+        final float scale =  getResources().getDisplayMetrics().density;
+        int px = (int) (300 * scale + 0.5f);
+
+        relativeLayout2.getLayoutParams().height = px;
+
+    ///DATABASE
+        mDatabaseHelper = new DatabaseHelper(this);
+    ///RECYCLER
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         events= new ArrayList<>();
@@ -51,9 +71,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         recyclerViewx = new RecyclerAdapter(this, events);
 
         recyclerView.setAdapter(recyclerViewx);
-
+    ///BUTTON CLICK
         actionButton.setOnClickListener(this);
-
+        graph.setOnClickListener(this);
     }
 
     @Override
@@ -61,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch(view.getId()){
             case R.id.fab: /** Start a new Activity MyCards.java */
             {
+
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(view.getContext());
 
                 LayoutInflater inflater1 = (LayoutInflater)  getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -104,6 +125,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.Graph: /** Start a new Activity MyCards.java */
             {
+                if(!isOpen){
+                    relativeLayout.animate().translationY(getResources().getDimension(R.dimen.stan_300));
+                    relativeLayout2.animate().translationY(0);
+                    relativeLayout.bringToFront();
+                    isOpen=true;
+                }else{
+                    relativeLayout.animate().translationY(0);
+                    relativeLayout2.animate().translationY(-getResources().getDimension(R.dimen.stan_300));
+                    isOpen=false;
+                }
+
+
                 break;
             }
             case R.id.Contacts: /** Start a new Activity MyCards.java */
