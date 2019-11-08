@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
@@ -19,6 +21,8 @@ import android.widget.TextView;
 import com.anioncode.workpower.Model.ModelEvent;
 import com.anioncode.workpower.UI.RecyclerAdapter;
 import com.anioncode.workpower.database.DatabaseHelper;
+import com.anioncode.workpower.fragment.Demo;
+import com.anioncode.workpower.fragment.GraphFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -36,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     RecyclerAdapter recyclerViewx;
     FloatingActionButton actionButton;
     RelativeLayout relativeLayout;
-    RelativeLayout relativeLayout2;
+    FrameLayout frameLayout;
 
     ImageButton graph;
 
@@ -51,15 +55,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         recyclerView=findViewById(R.id.RecyclerView);
         actionButton=findViewById(R.id.fab);
         relativeLayout=findViewById(R.id.RelativeLayout);
-        relativeLayout2=findViewById(R.id.RL);
+        frameLayout=findViewById(R.id.Frame);
         graph=findViewById(R.id.Graph);
 
-        relativeLayout2.setTranslationY(-getResources().getDimension(R.dimen.stan_300));
-        relativeLayout2.bringToFront();
+        frameLayout.setTranslationY(-getResources().getDimension(R.dimen.stan_300));
+        frameLayout.bringToFront();
+
+
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.Frame,
+                new Demo()).commit();
+
+        //Convert DPD To PX
         final float scale =  getResources().getDisplayMetrics().density;
         int px = (int) (300 * scale + 0.5f);
 
-        relativeLayout2.getLayoutParams().height = px;
+        frameLayout.getLayoutParams().height = px;
 
     ///DATABASE
         mDatabaseHelper = new DatabaseHelper(this);
@@ -127,12 +138,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {
                 if(!isOpen){
                     relativeLayout.animate().translationY(getResources().getDimension(R.dimen.stan_300));
-                    relativeLayout2.animate().translationY(0);
+                    frameLayout.animate().translationY(0);
                     relativeLayout.bringToFront();
                     isOpen=true;
                 }else{
                     relativeLayout.animate().translationY(0);
-                    relativeLayout2.animate().translationY(-getResources().getDimension(R.dimen.stan_300));
+                    frameLayout.animate().translationY(-getResources().getDimension(R.dimen.stan_300));
                     isOpen=false;
                 }
 

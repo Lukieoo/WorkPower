@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 29
@@ -23,6 +25,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.50"
+
     implementation 'de.hdodenhof:circleimageview:3.0.1'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'com.google.android.material:material:1.0.0-rc01'//in androidx new design '
@@ -30,7 +34,7 @@ dependencies {
 
     implementation "com.daimajia.swipelayout:library:1.2.0@aar"//Do przesuwania loyaoutów
 
-
+    implementation 'com.diogobernardino:williamchart:3.1.1'//Graph
 
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
