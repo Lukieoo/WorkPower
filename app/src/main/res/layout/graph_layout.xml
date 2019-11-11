@@ -6,35 +6,41 @@
     android:background="@color/colorAccent"
     android:layout_height="match_parent">
 
-    <com.db.williamchart.view.LineChartView
+    <com.github.mikephil.charting.charts.LineChart
+        android:layout_margin="10dp"
         android:id="@+id/lineChartx"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:chart_axis="none"
-        app:chart_lineColor="#ffffff"
-        app:chart_lineThickness="3dp"
-        app:chart_smoothLine="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+<!--    <com.db.williamchart.view.LineChartView-->
+<!--        android:id="@+id/lineChartx"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        app:chart_axis="none"-->
+<!--        app:chart_lineColor="#ffffff"-->
+<!--        app:chart_lineThickness="3dp"-->
+<!--        app:chart_smoothLine="true"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent" />-->
 
-    <com.db.williamchart.view.BarChartView
-        android:id="@+id/barChart"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:chart_axis="x"
-        app:chart_barsColor="#fff"
-        app:chart_barsRadius="4dp"
-        app:chart_labelsColor="#fff"
-        app:chart_labelsSize="10sp"
-        app:chart_spacing="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/lineChartx"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+<!--    <com.db.williamchart.view.BarChartView-->
+<!--        android:id="@+id/barChart"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="150dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        app:chart_axis="x"-->
+<!--        app:chart_barsColor="#fff"-->
+<!--        app:chart_barsRadius="4dp"-->
+<!--        app:chart_labelsColor="#fff"-->
+<!--        app:chart_labelsSize="10sp"-->
+<!--        app:chart_spacing="15dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/lineChartx"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

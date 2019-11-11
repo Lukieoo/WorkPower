@@ -30,20 +30,22 @@
             android:padding="10dp">
 
             <TextView
+                android:id="@+id/Surname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
-                android:text="Paweł Krzyściak"
+                android:text="Twoja Nazwa"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/Places"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
                 android:fontFamily="sans-serif-light"
-                android:text="Android Developer"
+                android:text="Cieszymy sie ,że wybrałeś włąśnie nas"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@android:color/white" />
 
@@ -56,7 +58,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="20dp"
-            android:src="@drawable/photo"
+            android:src="@drawable/dribbble4"
             app:civ_border_color="#5DBCEA"
             app:civ_border_width="2dp" />
 
@@ -101,24 +103,6 @@
         android:background="@drawable/rectangle2"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent">
-        <ImageButton
-            android:id="@+id/Graph"
-            android:backgroundTint="@android:color/transparent"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="40dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_chart"
-            />
-        <ImageButton
-            android:backgroundTint="@android:color/transparent"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="40dp"
-            android:layout_alignParentEnd="true"
-            android:id="@+id/Contacts"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_group"
-            />
+
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

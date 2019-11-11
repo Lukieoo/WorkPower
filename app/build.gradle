@@ -27,6 +27,10 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.50"
 
+    implementation 'com.google.android.gms:play-services-ads:18.3.0'//adds
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'//chart
+
     implementation 'de.hdodenhof:circleimageview:3.0.1'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'com.google.android.material:material:1.0.0-rc01'//in androidx new design '

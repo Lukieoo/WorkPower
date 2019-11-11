@@ -93,7 +93,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public ArrayList<ModelEvent> getAllData(){
         ArrayList<ModelEvent> arrayList=new ArrayList<>();
         SQLiteDatabase db =this.getReadableDatabase();
-        Cursor cursor =db.rawQuery("Select * from "+TABLE_NAME,null);
+        Cursor cursor =db.rawQuery("Select * from "+TABLE_NAME+" ORDER BY Priorytet DESC",null);
         while(cursor.moveToNext()){
 
             int id=cursor.getInt(0);
